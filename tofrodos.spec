@@ -3,7 +3,7 @@
 %bcond_with debug
 #
 Summary:	DOS/UNIX text file conversion tool
-Summary(pl.UTF-8):	narzędzie do konwersji plików tekstowych między formatami DOS i UNIX
+Summary(pl.UTF-8):	Narzędzie do konwersji plików tekstowych między formatami DOS i UNIX
 Name:		tofrodos
 Version:	1.7.6
 Release:	1
@@ -25,16 +25,15 @@ text files to the Unix format, and "todos" to convert Unix text files
 to the DOS format.
 
 %description -l pl.UTF-8
-W systemach z rodziny DOS/Windows końce linii w plikach tekstowych
-są tradycyjnie oznaczane przez CR/LF (powrót karetki / nowa linia).
+W systemach z rodziny DOS/Windows końce linii w plikach tekstowych są
+tradycyjnie oznaczane przez CR/LF (powrót karetki / nowa linia).
 Wynika to z braku elementarnej obsługi drukarek w systemie DOS. W
 systemach UNIX końce linii są oznaczane przez LF.
 
-tofrodos jest zestawem dwóch narzędzi "fromdos" i "todos", które
-służą do konwersji plików tekstowych między tymi formatami.
-Program "fromdos" służy do konwersji plików z formatu DOSa do
-formatu UNIXa, natomiast "todos" służy do konwersji z formatu UNIXa
-do formatu DOSa.
+tofrodos jest zestawem dwóch narzędzi "fromdos" i "todos", które służą
+do konwersji plików tekstowych między tymi formatami. Program
+"fromdos" służy do konwersji plików z formatu DOSa do formatu UNIXa,
+natomiast "todos" służy do konwersji z formatu UNIXa do formatu DOSa.
 
 %prep
 %setup -c -q
