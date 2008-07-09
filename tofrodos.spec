@@ -1,7 +1,3 @@
-#
-# Conditional build:
-%bcond_with debug
-#
 Summary:	DOS/UNIX text file conversion tool
 Summary(pl.UTF-8):	Narzędzie do konwersji plików tekstowych między formatami DOS i UNIX
 Name:		tofrodos
@@ -26,24 +22,25 @@ to the DOS format.
 
 %description -l pl.UTF-8
 W systemach z rodziny DOS/Windows końce linii w plikach tekstowych są
-tradycyjnie oznaczane przez CR/LF (powrót karetki / nowa linia).
+tradycyjnie oznaczane przez znaki CR/LF (powrót karetki / nowa linia).
 Wynika to z braku elementarnej obsługi drukarek w systemie DOS. W
-systemach UNIX końce linii są oznaczane przez LF.
+systemach UNIX końce linii są oznaczane przez znaki LF.
 
 tofrodos jest zestawem dwóch narzędzi "fromdos" i "todos", które służą
 do konwersji plików tekstowych między tymi formatami. Program
-"fromdos" służy do konwersji plików z formatu DOSa do formatu UNIXa,
-natomiast "todos" służy do konwersji z formatu UNIXa do formatu DOSa.
+"fromdos" służy do konwersji plików z formatu DOS-a do formatu UNIX-a,
+natomiast "todos" służy do konwersji z formatu UNIX-a do formatu
+DOS-a.
 
 %prep
-%setup -c -q
+%setup -q -c
 
 %build
-%{__make} -C src/ \
+%{__make} -C src \
 	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags} -c" \
 	LDFLAGS="%{rpmldflags}" \
-	%{?with_debug:DEBUG=1}
+	%{?debug:DEBUG=1}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -59,5 +56,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc readme.txt tofrodos.html
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
+%attr(755,root,root) %{_bindir}/fromdos
+%attr(755,root,root) %{_bindir}/todos
+%{_mandir}/man1/fromdos.1*
