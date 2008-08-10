@@ -21,19 +21,19 @@ text files to the Unix format, and "todos" to convert Unix text files
 to the DOS format.
 
 %description -l pl.UTF-8
-W systemach z rodziny DOS/Windows końce linii w plikach tekstowych są
-tradycyjnie oznaczane przez znaki CR/LF (powrót karetki / nowa linia).
-Wynika to z braku elementarnej obsługi drukarek w systemie DOS. W
-systemach UNIX końce linii są oznaczane przez znaki LF.
+W systemach z rodziny DOS/Windows końce linii w plikach tekstowych
+są tradycyjnie oznaczane przez znaki CR/LF (powrót karetki / nowa
+linia). Wynika to z braku elementarnej obsługi drukarek w systemie
+DOS. W systemach UNIX końce linii są oznaczane przez znaki LF.
 
-tofrodos jest zestawem dwóch narzędzi "fromdos" i "todos", które służą
-do konwersji plików tekstowych między tymi formatami. Program
-"fromdos" służy do konwersji plików z formatu DOS-a do formatu UNIX-a,
-natomiast "todos" służy do konwersji z formatu UNIX-a do formatu
-DOS-a.
+tofrodos jest zestawem dwóch narzędzi "fromdos" i "todos", które
+służą do konwersji plików tekstowych między tymi formatami.
+Program "fromdos" służy do konwersji plików z formatu DOS-a do
+formatu UNIX-a, natomiast "todos" służy do konwersji z formatu
+UNIX-a do formatu DOS-a.
 
 %prep
-%setup -q -n tofrodos
+%setup -q -n %{name}
 
 %build
 %{__make} -C src \
