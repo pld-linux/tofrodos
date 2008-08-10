@@ -1,12 +1,12 @@
 Summary:	DOS/UNIX text file conversion tool
 Summary(pl.UTF-8):	Narzędzie do konwersji plików tekstowych między formatami DOS i UNIX
 Name:		tofrodos
-Version:	1.7.6
+Version:	1.7.8
 Release:	1
 License:	GPL v2
 Group:		Applications/Text
 Source0:	http://tofrodos.sourceforge.net/download/%{name}-%{version}.tar.gz
-# Source0-md5:	518b32d041879702e883f651c77c0fcc
+# Source0-md5:	aaa044f9817a048e126d9eb7a7535e96
 URL:		http://www.thefreecountry.com/tofrodos/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,7 +33,7 @@ natomiast "todos" służy do konwersji z formatu UNIX-a do formatu
 DOS-a.
 
 %prep
-%setup -q -c
+%setup -q -n tofrodos
 
 %build
 %{__make} -C src \
